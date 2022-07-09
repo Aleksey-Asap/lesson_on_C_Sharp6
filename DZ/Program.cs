@@ -24,18 +24,35 @@
 // b1 = 2, k1 = 5, b2 = 4, 
 // k2 = 9 -> (-0,5; 5,5)
 
-Console.Write("Введите k1: ");
-var k1 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите b1: ");
-var b1 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите k2: ");
-var k2 = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите b2: ");
-var b2 = Convert.ToDouble(Console.ReadLine());
-var x = -(b1 - b2) / (k1 - k2);
-var y = k1 * x + b1;
-x = Math.Round(x, 3);
-y = Math.Round(y, 3);
-Console.WriteLine($"Пересечение в точке: ({x};{y})");
+// Console.Write("Введите k1: ");
+// var k1 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите b1: ");
+// var b1 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите k2: ");
+// var k2 = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Введите b2: ");
+// var b2 = Convert.ToDouble(Console.ReadLine());
+// var x = -(b1 - b2) / (k1 - k2);
+// var y = k1 * x + b1;
+// x = Math.Round(x, 3);
+// y = Math.Round(y, 3);
+// Console.WriteLine($"Пересечение в точке: ({x};{y})");
 
 
+string s = Console.ReadLine();
+string[] nums = s.Split(',');
+
+Console.WriteLine(s);
+
+int[] mass = new int[nums.Length];
+for (int i =0; i < nums.Length; i++)
+{
+    int count = 0;
+     if (arr[i] > 0)
+     {
+         count++;
+     }
+    Console.WriteLine("Подстрока: " + nums[i]);
+    mass[i] = int.Parse(nums[i]);
+    Console.WriteLine();
+}
