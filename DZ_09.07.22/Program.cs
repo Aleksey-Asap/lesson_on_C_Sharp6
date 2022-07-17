@@ -1,4 +1,4 @@
-﻿// Задача 46: Задайте двумерный массив размером 
+﻿// Задача 47: Задайте двумерный массив размером 
 // m×n, заполненный  случайными вещественными числами.
 // m = 3, n = 4. 
 // 0,5 7 -2 -0,2 
@@ -19,12 +19,12 @@
 
 // int m = 3, n = 4;
 // double[,] mass = new double[m, n];
-
-// for (int i = 0; i < mass.GetLength(0); i++)
+// Random random = new Random();
+// for (int i = 0; i < m; i++)
 // {
-//     for (int j = 0; j < mass.GetLength(1); j++)
+//     for (int j = 0; j < n; j++)
 //     {
-//         mass[i, j] = new Random().Next(-100, 100) + new Random().NextDouble();
+//         mass[i, j] = random.Next(-100, 100) + random.NextDouble();
 //         mass[i, j] = Math.Round(mass[i, j], 2);
 //     }
 // }
@@ -32,7 +32,7 @@
 // Print(mass);
 
 // Задача 50: Напишите программу, которая 
-// на вход принимает позиции элемента в двумерном массиве, 
+// на вход принимает значение элемента в двумерном массиве, 
 // и возвращает значение этого элемента
 // или же указание, что такого элемента нет
 // Например, задан массив: 
@@ -53,104 +53,74 @@
 //     }
 // }
 
+// Random random = new Random();
 // int m = 3, n = 4;
 // int[,] mass = new int[m, n];
 
-// for (int i = 0; i < mass.GetLength(0); i++)
+// for (int i = 0; i < m; i++)
 // {
-//     for (int j = 0; j < mass.GetLength(1); j++)
+//     for (int j = 0; j < n; j++)
 //     {
-//         mass[i, j] = i + j;
+//         mass[i, j] = random.Next(1,20);
 //     }
 // }
 // Print(mass);
 // Console.WriteLine();
 
-// Console.WriteLine("Введите первое число массива:");
-// int k = int.Parse(Console.ReadLine());
-// Console.WriteLine("Введите введите второе число массива:");
-// int t = int.Parse(Console.ReadLine());
-// int[,] mass1 = new int[k, t];
+// Console.WriteLine("Введите значение числа массива:");
+// int num = int.Parse(Console.ReadLine());
 
-// for (int i = 0; i < mass.GetLength(0); i++)
+
+// for (int i = 0; i < m; i++)
 // {
-//     for (int j = 0; j < mass.GetLength(1); i++)
+//     for (int j = 0; j < n; j++)
 //     {
-//         if (mass[i, j] == mass1[k, t])
+//         if (mass[i, j] == num)
 //         {
-//             Console.WriteLine(mass[i, j]);
+//             Console.WriteLine($"Строка {i}; Столбец {j}");
+//             return;
 //         }
-//         else Console.WriteLine("Такого значения нет");
+//     }
+// }
+// Console.WriteLine("Такого значения нет");
+
+
+// Задача 52: Задайте двумерный массив из целых чисел. 
+// Найдите среднее арифметическое элементов в каждом столбце.
+
+// void Print(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.Write(arr[i, j] + ", ");
+//         }
+//         Console.WriteLine();
 //     }
 // }
 
-// Print(mass);
+// Random random = new Random();
+// int m = 3, n = 4;
+// int[,] mass = new int[m, n];
 
-
-
-
-
-
-
-
-
-void Print(int[,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            Console.Write(arr[i, j] + ", ");
-        }
-        Console.WriteLine();
-    }
-}
-
-int m = 3, n = 4;
-int[,] mass = new int[m, n];
-
-for (int i = 0; i < mass.GetLength(0); i++)
-{
-    for (int j = 0; j < mass.GetLength(1); j++)
-    {
-        mass[i, j] = i + j;
-    }
-}
-
-double sum1 = 0;
-double sum2 = 0;
-double sum3 = 0;
-double sum4 = 0;
-double ArithmeticSum1 = 0;
-double ArithmeticSum2 = 0;
-double ArithmeticSum3 = 0;
-double ArithmeticSum4 = 0;
-
-for (int i = 0; i < mass.GetLength(0); i++)
-{
-
-    sum1 += mass[i, 0];
-    ArithmeticSum1 = sum1 / m;
-    sum2 += mass[i, 1];
-    ArithmeticSum2 = sum2 / m;
-    sum3 += mass[i, 2];
-    ArithmeticSum3 = sum3 / m;
-    sum4 += mass[i, 3];
-    ArithmeticSum4 = sum4 / m;
-}
-
-Print(mass);
-Console.WriteLine(" Cреднее арифметическое элементов в каждом столбце:");
-Console.WriteLine($"{ArithmeticSum1}, {ArithmeticSum2}, {ArithmeticSum3}, {ArithmeticSum4}");
-
-
-
-// for (int i=1,k=0;i<5;i+=2) 
+// for (int i = 0; i < m; i++)
 // {
-//     double summa=0;
-//     for (int j=0;j<5;j++) 
+//     for (int j = 0; j < n; j++)
 //     {
-//         summa+=a[i,j];
+//         mass[i, j] = random.Next(1, 20);
 //     }
-//     b[k]=summa/5;
-//     Console.WriteLine("Среднее арифметическое столбца "+(i+1)+" равно: "+b[k]);
+// }
+// Print(mass);
+// Console.WriteLine();
+
+// Console.WriteLine("Среднее арифметическое каждого столбца: ");
+// for (int j = 0; j < n; j++)
+// {
+//     double sum = 0;
+//     for (int i = 0; i < m; i++)
+//     {
+//         sum += mass[i, j];
+//     }
+//     Console.Write(Math.Truncate(sum/m*10)/10 + "; ");
+// }
